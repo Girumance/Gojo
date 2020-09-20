@@ -23,10 +23,9 @@ public class Profile {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private String City;
     private AccountType type;
     private String password;
-    private String sex;
+
 
 
     private boolean isAccountNonBlocked=true;

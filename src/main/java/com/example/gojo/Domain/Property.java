@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import javax.persistence.GeneratedValue;
 import java.util.ArrayList;
+import java.util.Date;
 
 @Data
 @Document
@@ -22,11 +23,13 @@ public class Property {
     private String Titile;
     private String Description;
     private String price;
+    private String area;
     private PropertyType propertyType;
     private PropertyFOr propertyFor;
-    private int No_Of_BedRooms;
+    private String No_Of_BedRooms;
+    private String No_of_Bathrooms;
     private ArrayList<String> Amenities;
-    private String date;
+    private Date date=new Date();
     private String Region;
     private String location;
     private String city;

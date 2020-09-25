@@ -2,26 +2,44 @@ package com.example.gojo.Services;
 
 
 import com.example.gojo.Domain.Property;
+import com.example.gojo.Repository.PropertyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 @Service
 public class PropertyService {
 
-    public boolean createProperty(Property property){
+    @Autowired
+    private PropertyRepository propertyRepository;
+
+    public Property createProperty(Property property){
+
+            Property prop=propertyRepository.insert(property);
+
+        return prop;
+    }
+
+    public boolean removeProperty(String id) {
+
+        propertyRepository.deleteById(id);
 
 
         return true;
     }
 
-    public boolean removeProperty(Property property) {
+    public ArrayList<Property> getPropertyByOwnerId(String id){
 
-        return true;
+            ArrayList<Property> property = propertyRepository.findAllByOwnerId(id);
+        return  property;
     }
 
-    public Property getPropertyByOwnerId(String id){
 
+    public ArrayList<Property> getPropertyByCityContains(String city){
 
-        return  new Property();
+        ArrayList<Property> property = propertyRepository.findAllByCityContains(city);
+        return  property;
     }
 
     public boolean updateProperty(Property property){

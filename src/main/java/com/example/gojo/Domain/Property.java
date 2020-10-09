@@ -34,4 +34,5 @@ public class Property {
     private String location;
     private String city;
     private String OwnerId;
+    private boolean approved=false;
 }

@@ -38,7 +38,7 @@ public class PropertyService {
 
     public ArrayList<Property> getPropertyByCityContains(String city){
 
-        ArrayList<Property> property = propertyRepository.findAllByCityContains(city);
+        ArrayList<Property> property = propertyRepository.findAllByCityAndApproved(city,true);
         return  property;
     }
 
@@ -46,5 +46,9 @@ public class PropertyService {
 
 
         return true;
+    }
+
+    public ArrayList<Property> getAllByNotApproved(){
+        return  propertyRepository.findAllByApproved(false);
     }
 }

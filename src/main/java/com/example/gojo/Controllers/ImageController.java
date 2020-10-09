@@ -1,5 +1,6 @@
 package com.example.gojo.Controllers;
 
+import com.example.gojo.Domain.ImageStorage;
 import com.example.gojo.Services.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -9,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/image")
@@ -46,5 +48,16 @@ public class ImageController {
     public ResponseEntity<Object> getProfileImage(@PathVariable String id, HttpServletResponse response){
 
         return imageService.downloadProfile(id,response);
+    }
+
+    @GetMapping(value="/downloadbyfilename/{id}/{filename}",produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+    public ResponseEntity<Object> getImageByName(@PathVariable() String id,@PathVariable String filename, HttpServletResponse response){
+
+        return imageService.downloadByName(id,filename,response);
+    }
+
+    @GetMapping(value="/allimages/{id}")
+    public ArrayList<ImageStorage> getAllImages(@PathVariable  String id){
+        return  imageService.findAllImageByOwnerId(id);
     }
 }

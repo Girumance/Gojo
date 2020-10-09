@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 
 @Service
 public class ImageService {
@@ -99,6 +100,34 @@ public class ImageService {
 
     }
 
+    public ResponseEntity<Object> downloadByName( String id,String fileName, HttpServletResponse response) {
+
+
+        String filePath = "/root/Documents/GojoPictures/" + fileName;
+        Path path = Paths.get(filePath);
+        UrlResource resource = null;
+
+        try {
+            resource = new UrlResource(path.toUri());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        if (resource.exists()) {
+            return ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                    .body(resource);
+
+            // return new ResponseEntity<Object>(resource, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<Object>("File Not Found ", HttpStatus.OK);
+        }
+
+
+
+    }
+
+
 
     public void saveImageOnDatabase(String id,boolean profile,String fileName){
 
@@ -108,5 +137,10 @@ public class ImageService {
         imageStorage.setProfile(profile);
 
         imageRepository.save(imageStorage);
+    }
+
+    public ArrayList<ImageStorage> findAllImageByOwnerId(String id){
+
+        return  imageRepository.findAllByOwnerId(id);
     }
 }

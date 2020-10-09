@@ -29,11 +29,6 @@ public class PropertyController {
 
     }
 
-    @PostMapping("/get")
-    public Property get(){
-        return new Property();
-    }
-
     @GetMapping("/owner/{id}")
     public ArrayList<Property> getPropertyByOwnerId(@PathVariable("id") String id){
 
@@ -45,8 +40,15 @@ public class PropertyController {
 
     @GetMapping("/city/{city}")
     public ArrayList<Property> getPropertyByCity(@PathVariable String city){
-        System.out.println(city);
+
         return propertyService.getPropertyByCityContains(city);
+    }
+
+
+    @GetMapping("/notApproved")
+    public ArrayList<Property> getAllNotApproved(){
+
+        return propertyService.getAllByNotApproved();
     }
 
 

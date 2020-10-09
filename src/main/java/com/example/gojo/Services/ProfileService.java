@@ -2,6 +2,7 @@ package com.example.gojo.Services;
 
 import com.example.gojo.Components.NewPassWrapper;
 import com.example.gojo.Components.UserPrincipal;
+import com.example.gojo.Constant.AccountType;
 import com.example.gojo.Domain.Profile;
 import com.example.gojo.Repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +12,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 @Service
 public class ProfileService  implements UserDetailsService {
 
     @Autowired
-    ProfileRepository repository;
+   private ProfileRepository repository;
 
 
     @Override
@@ -90,6 +92,13 @@ public class ProfileService  implements UserDetailsService {
             return account;
         }
         return  old.get();
+
+    }
+
+
+    public ArrayList<Profile> getAllProfileByAccountType(AccountType type){
+
+        return  repository.findAllByType(type);
 
     }
 

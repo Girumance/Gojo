@@ -1,12 +1,15 @@
 package com.example.gojo.Services;
 
 
+import com.example.gojo.Domain.Profile;
 import com.example.gojo.Domain.Property;
 import com.example.gojo.Repository.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.origin.SystemEnvironmentOrigin;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class PropertyService {
@@ -50,5 +53,16 @@ public class PropertyService {
 
     public ArrayList<Property> getAllByNotApproved(){
         return  propertyRepository.findAllByApproved(false);
+    }
+
+
+    public boolean approveProperty(String id) {
+        System.out.println(id);
+        Property property = propertyRepository.findPropertyById(id);
+        propertyRepository.deleteById(id);
+        property.setApproved(true);
+        propertyRepository.save(property);
+
+        return true;
     }
 }

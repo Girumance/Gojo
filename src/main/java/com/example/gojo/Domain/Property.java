@@ -19,7 +19,7 @@ public class Property {
 
     @Id
     @GeneratedValue
-    private String Id;
+    private String id;
     private String Titile;
     private String Description;
     private String price;
@@ -34,5 +34,5 @@ public class Property {
     private String location;
     private String city;
     private String OwnerId;
-    private boolean approved=false;
+    private boolean approved=true;
 }

@@ -74,7 +74,7 @@ public class ImageService {
             ImageStorage img =imageRepository.findImageStorageByOwnerIdAndProfile(id,true);
 
 
-        String fileName=img.getFileName();
+       String fileName=img.getFileName();
 
         String filePath = "/root/Documents/GojoPictures/" + fileName;
         Path path = Paths.get(filePath);

@@ -51,6 +51,12 @@ public class PropertyController {
         return propertyService.getAllByNotApproved();
     }
 
+    @GetMapping("/approve/{id}")
+    public boolean makeItApproved(@PathVariable String id){
+
+        return  propertyService.approveProperty(id);
+    }
+
 
 
 }

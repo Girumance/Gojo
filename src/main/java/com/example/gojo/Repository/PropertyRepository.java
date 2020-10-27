@@ -13,7 +13,7 @@ public interface PropertyRepository extends MongoRepository<Property,String> {
     @Query(value="{OwnerId:?0}")
     ArrayList<Property> findAllByOwnerId(String id);
 
-
+    Property findPropertyById(String Id);
     //@Query(value="{city:?0}")
     ArrayList<Property> findAllByCityAndApproved(String city,boolean approved);
     ArrayList<Property> findAllByApproved(boolean approved);

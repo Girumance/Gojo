@@ -1,5 +1,6 @@
 package com.example.gojo.Controllers;
 
+import com.example.gojo.Components.FilterWrapper;
 import com.example.gojo.Domain.Property;
 import com.example.gojo.Services.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +58,13 @@ public class PropertyController {
         return  propertyService.approveProperty(id);
     }
 
+
+
+    @GetMapping("/minmax")
+    public Object minMax(@RequestBody FilterWrapper wrapper){
+
+        return propertyService.Filter(wrapper.getMin(),wrapper.getMax());
+    }
 
 
 }

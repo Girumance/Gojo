@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="306.0" y="0.0">com.example.gojo.Domain.Profile</node>
+    <node x="624.0" y="0.0">com.example.gojo.Domain.Message</node>
+    <node x="0.0" y="1541.0">com.example.gojo.Constant.PropertyType</node>
+    <node x="0.0" y="755.0">com.example.gojo.Security.SpringSecurityConfiguration</node>
+    <node x="365.0" y="1541.0">com.example.gojo.Repository.FavoriteRepository</node>
+    <node x="1115.0" y="1693.0">com.example.gojo.Configuration.CorsConfig</node>
+    <node x="962.0" y="1186.0">com.example.gojo.Repository.PropertyRepository</node>
+    <node x="1150.0" y="477.0">com.example.gojo.Controllers.PropertyController</node>
+    <node x="184.0" y="1541.0">com.example.gojo.Constant.AccountType</node>
+    <node x="0.0" y="1364.0">com.example.gojo.Components.NewPassWrapper</node>
+    <node x="793.0" y="1008.0">com.example.gojo.Services.Messageservice</node>
+    <node x="1511.0" y="1186.0">com.example.gojo.Security.JwtProperties</node>
+    <node x="0.0" y="1693.0">com.example.gojo.Security.CustomEntryPoint</node>
+    <node x="0.0" y="1008.0">com.example.gojo.Security.JwtAuthenticationFilter</node>
+    <node x="1379.0" y="0.0">com.example.gojo.Components.UserPrincipal</node>
+    <node x="1499.0" y="1541.0">com.example.gojo.Constant.PropertyFOr</node>
+    <node x="437.0" y="755.0">com.example.gojo.Controllers.ImageController</node>
+    <node x="854.0" y="0.0">com.example.gojo.Services.ProfileService</node>
+    <node x="1095.0" y="755.0">com.example.gojo.Controllers.ProfileController</node>
+    <node x="682.0" y="1693.0">com.example.gojo.Repository.MessageRepository</node>
+    <node x="0.0" y="1186.0">com.example.gojo.Controllers.FavoriteController</node>
+    <node x="1263.0" y="1008.0">com.example.gojo.Services.FavoriteService</node>
+    <node x="1503.0" y="1693.0">com.example.gojo.GojoApplication</node>
+    <node x="0.0" y="0.0">com.example.gojo.Domain.Property</node>
+    <node x="356.0" y="1186.0">com.example.gojo.Repository.ImageRepository</node>
+    <node x="1273.0" y="1541.0">com.example.gojo.Components.LogInModel</node>
+    <node x="489.0" y="477.0">com.example.gojo.Services.ImageService</node>
+    <node x="841.0" y="1541.0">com.example.gojo.Repository.ProfileRepository</node>
+    <node x="1637.0" y="1364.0">com.example.gojo.Domain.Favorite</node>
+    <node x="495.0" y="1364.0">com.example.gojo.Security.JwtAuthorizationFilter</node>
+    <node x="0.0" y="477.0">com.example.gojo.Services.PropertyService</node>
+    <node x="274.0" y="1364.0">com.example.gojo.Domain.ImageStorage</node>
+    <node x="1142.0" y="1364.0">com.example.gojo.Controllers.MessageController</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="956.5" y="1830.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -22,7 +22,7 @@ public class Property {
     private String id;
     private String Titile;
     private String Description;
-    private String price;
+    private int price;
     private String area;
     private PropertyType propertyType;
     private PropertyFOr propertyFor;

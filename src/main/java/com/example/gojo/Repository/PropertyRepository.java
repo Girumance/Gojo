@@ -19,4 +19,7 @@ public interface PropertyRepository extends MongoRepository<Property,String> {
     ArrayList<Property> findAllByApproved(boolean approved);
 
 
+
+
+
 }

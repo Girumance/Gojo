@@ -1,15 +1,15 @@
 package com.example.gojo.Services;
 
 
-import com.example.gojo.Domain.Profile;
+
 import com.example.gojo.Domain.Property;
 import com.example.gojo.Repository.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.origin.SystemEnvironmentOrigin;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PropertyService {
@@ -64,5 +64,10 @@ public class PropertyService {
         propertyRepository.save(property);
 
         return true;
+    }
+
+
+    public Object Filter(String min, String max){
+        return propertyRepository.findAllByCityAndApproved("Bishoftu",true).stream().filter(x -> x.getPrice() > 0).collect(Collectors.toList());
     }
 }

@@ -14,6 +14,7 @@ public class FilterWrapper {
     private String city;
     private String propertyFor;
     private String PropertyType;
+    private String beds;
 
 
 }

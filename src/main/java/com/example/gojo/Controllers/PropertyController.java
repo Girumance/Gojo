@@ -60,10 +60,10 @@ public class PropertyController {
 
 
 
-    @GetMapping("/minmax")
+    @PostMapping("/filter")
     public Object minMax(@RequestBody FilterWrapper wrapper){
 
-        return propertyService.Filter(wrapper.getMin(),wrapper.getMax());
+        return propertyService.Filter(wrapper);
     }
 
 

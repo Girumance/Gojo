@@ -2,6 +2,7 @@ package com.example.gojo.Services;
 
 
 
+import com.example.gojo.Components.FilterWrapper;
 import com.example.gojo.Domain.Property;
 import com.example.gojo.Repository.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.logging.Filter;
 import java.util.stream.Collectors;
 
 @Service
@@ -67,7 +69,21 @@ public class PropertyService {
     }
 
 
-    public Object Filter(String min, String max){
-        return propertyRepository.findAllByCityAndApproved("Bishoftu",true).stream().filter(x -> x.getPrice() > 0).collect(Collectors.toList());
+    public Object Filter(FilterWrapper wrapper){
+
+        boolean propertyfor= String.valueOf(wrapper.getPropertyFor()).equals("All") ? true : false;
+        boolean beds = wrapper.getBeds().equals("0") ? true : false;
+        boolean type = String.valueOf(wrapper.getPropertyType()).equals("All") ? true : false;
+
+
+        return propertyRepository.findAllByCityAndApproved(wrapper.getCity(),true).stream().filter(x ->
+                ((x.getPrice() > Integer.valueOf(wrapper.getMin()) && x.getPrice() < Integer.valueOf( wrapper.getMax())) &&
+                        (beds ? true  : ( x.getNo_Of_BedRooms().equals(wrapper.getBeds()))) &&
+                        (propertyfor ? true :  (String.valueOf(x.getPropertyFor()).equals(wrapper.getPropertyFor()))) &&
+                        (type ? true : String.valueOf(x.getPropertyType()).equals(wrapper.getPropertyType()))
+                )
+
+
+        ).collect(Collectors.toList());
     }
 }

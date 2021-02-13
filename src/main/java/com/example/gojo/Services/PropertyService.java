@@ -47,7 +47,7 @@ public class PropertyService {
         return  property;
     }
 
-    public boolean updateProperty(Property property){
+    public boolean updateProperty(Property property, String id){
 
 
         return true;

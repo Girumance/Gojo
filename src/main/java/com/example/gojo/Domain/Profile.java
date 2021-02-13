@@ -26,8 +26,6 @@ public class Profile {
     private AccountType type;
     private String password;
 
-
-
     private boolean isAccountNonBlocked=true;
     private boolean isAccountEnabled=true;
 

@@ -67,4 +67,22 @@ public class PropertyController {
     }
 
 
+    @GetMapping("/getById/{id}")
+    public Property getPropertyById(@PathVariable String id){
+
+        return propertyService.findPropertyById(id);
+    }
+
+
+    @GetMapping("delete/{id}")
+    public int deleteById(@PathVariable String id){
+
+        return propertyService.deleteById(id);
+    }
+
+    @GetMapping("/count")
+    public long totalProperty(){
+        return  propertyService.totalProperties();
+    }
+
 }

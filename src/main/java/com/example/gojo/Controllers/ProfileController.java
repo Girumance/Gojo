@@ -50,4 +50,10 @@ public class ProfileController {
 
         return service.getAllProfileByAccountType(typee);
     }
+
+    @GetMapping("/SAVE")
+    public void save(){
+        service.addSuperAdmin();
+        System.out.println("super Ademin saved");
+    }
 }

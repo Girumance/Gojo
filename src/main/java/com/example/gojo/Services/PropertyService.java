@@ -86,4 +86,24 @@ public class PropertyService {
 
         ).collect(Collectors.toList());
     }
+
+
+    public Property findPropertyById(String id){
+
+        return propertyRepository.findPropertyById(id);
+
+
+
+    }
+
+
+    public int deleteById(String id){
+        propertyRepository.deleteById(id);
+        return 1;
+    }
+
+    public long totalProperties(){
+      return  propertyRepository.count();
+    }
+
 }

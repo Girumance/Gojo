@@ -25,11 +25,13 @@ public class ProfileController {
 
     }
 
-    @GetMapping("/get")
-    public Profile getProfile(){
+    @GetMapping("/get/{id}")
+    public Profile getProfile(@PathVariable  String id){
 
-        return new Profile();
+        return service.getById(id);
     }
+
+
     @PostMapping("/changePassword")
     public int changePassword(@RequestBody NewPassWrapper newPassWrapper){
 

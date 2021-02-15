@@ -49,6 +49,11 @@ public class PropertyService {
 
     public boolean updateProperty(Property property, String id){
 
+        Property property1 = propertyRepository.findPropertyById(id);
+
+        propertyRepository.delete(property1);
+        property.setId(id);
+        propertyRepository.save(property);
 
         return true;
     }

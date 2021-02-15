@@ -15,8 +15,10 @@ public class BankService {
 
     @Autowired
     BankRepository bankRepository;
+
     @Autowired
     PropertyService propertyService;
+
     @Autowired
     PropertyRepository propertyRepository;
 

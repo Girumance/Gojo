@@ -85,4 +85,11 @@ public class PropertyController {
         return  propertyService.totalProperties();
     }
 
+
+    @PostMapping("/update/{id}")
+    public boolean updateProperty(@RequestBody Property property,@PathVariable String id){
+
+        return propertyService.updateProperty(property,id);
+    }
+
 }

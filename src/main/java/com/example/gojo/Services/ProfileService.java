@@ -114,6 +114,12 @@ public class ProfileService  implements UserDetailsService {
         repository.save(profile);
     }
 
+    public Profile getById(String id){
+
+       return repository.findProfileById(id);
+
+    }
+
    
 
 

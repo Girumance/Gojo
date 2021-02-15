@@ -36,4 +36,17 @@ public class Property {
     private String OwnerId;
     private boolean payed=false;
     private boolean approved=false;
+
+
+
+    public void setPropertyType(String role){
+
+        this.propertyType=PropertyType.valueOf(role);
+    }
+
+    public String getAccountType(){
+
+        return String.valueOf(propertyType);
+    }
+
 }

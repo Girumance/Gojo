@@ -14,4 +14,5 @@ public interface ProfileRepository extends MongoRepository<Profile,String> {
     public Profile findByEmail(String email);
     public ArrayList<Profile> findAllByType(AccountType type);
     public long countAllByAccountType(AccountType type);
+    public Profile findProfileById(String Id);
 }

@@ -120,6 +120,11 @@ public class ProfileService  implements UserDetailsService {
 
     }
 
+    public boolean deleteUser(String id){
+        repository.deleteById(id);
+        return true;
+    }
+
    
 
 

@@ -58,4 +58,11 @@ public class ProfileController {
         service.addSuperAdmin();
         System.out.println("super Ademin saved");
     }
+
+
+    @GetMapping("/delete/{id}")
+    public boolean deleteUser(@PathVariable String id){
+
+        return  service.deleteUser(id);
+    }
 }

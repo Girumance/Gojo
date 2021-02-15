@@ -53,6 +53,7 @@ public class PropertyService {
 
         propertyRepository.delete(property1);
         property.setId(id);
+        property.setOwnerId(property1.getOwnerId());
         propertyRepository.save(property);
 
         return true;
